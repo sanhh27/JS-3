@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="s.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="s.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>MovieTime</h1>
+        <p>Book your favourite movie tickets</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Book Movie Tickets</h2>
+
+            <form id="bookingForm">
+                <label for="movieSelect">Select Movie</label>
+                <select id="movieSelect" name="movie" required>
+                    <option value="180">Inception — ₹180</option>
+                    <option value="220">Interstellar — ₹220</option>
+                    <option value="250">Avengers: Endgame — ₹250</option>
+                </select>
+
+                <label for="showtimeSelect">Select Showtime</label>
+                <select id="showtimeSelect" name="showtime" required>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="1:30 PM">1:30 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="8:30 PM">8:30 PM</option>
+                </select>
+
+                <label for="ticketQuantity">Number of Tickets</label>
+                <input
+                    type="number"
+                    id="ticketQuantity"
+                    name="quantity"
+                    min="1"
+                    max="20"
+                    step="1"
+                    value="1"
+                    required
+                >
+
+                <label for="emailInput">Email Address</label>
+                <input
+                    type="email"
+                    id="emailInput"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <div class="price-box">
+                    <p>Price per ticket: <strong id="ticketPrice">₹180</strong></p>
+                    <p>Total Price: <strong id="totalPrice">₹180</strong></p>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" id="bookButton">Book Now</button>
+                    <button type="reset" id="resetButton" class="reset-button">
+                        Reset
+                    </button>
+                </div>
+
+                <p id="message" class="message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="booking-heading">
+                <h2>Your Bookings</h2>
+                <span class="count">Total: <strong id="bookingCount">0</strong></span>
+            </div>
+
+            <label for="searchInput">Search Bookings</label>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search movie, email or booking ID"
+            >
+
+            <div id="bookingList" class="booking-list">
+                No bookings yet.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>MovieTime & copy; 2026 | Enjoy your movie!</p>
+    </footer>
+
+</body>
+</html>
+```
